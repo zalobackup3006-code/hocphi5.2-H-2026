@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tra Cứu Học Phí Lớp 5.2 - Hè 2026</title>
+    <title>Tra Cứu Học Phí Lớp 5.2</title>
     <!-- Thư viện Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Thư viện Lucide Icons -->
@@ -18,34 +18,30 @@
         #toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: #1f2937; /* gray-800 */
+            background-color: #333;
             color: #fff;
             text-align: center;
-            border-radius: 9999px;
-            padding: 12px 24px;
+            border-radius: 8px;
+            padding: 16px;
             position: fixed;
             z-index: 50;
             left: 50%;
-            top: 20px;
+            bottom: 30px;
             transform: translateX(-50%);
-            font-size: 14px;
-            font-weight: 500;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 15px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
         }
         #toast.show {
             visibility: visible;
-            animation: fadein 0.3s, fadeout 0.3s 2.7s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
         @keyframes fadein {
-            from {top: 0; opacity: 0;}
-            to {top: 20px; opacity: 1;}
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
         }
         @keyframes fadeout {
-            from {top: 20px; opacity: 1;}
-            to {top: 0; opacity: 0;}
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
         }
     </style>
 </head>
@@ -54,27 +50,27 @@
     <div class="w-full max-w-md bg-white shadow-xl flex flex-col relative h-screen sm:h-auto sm:min-h-screen">
         
         <!-- HEADER -->
-        <header class="bg-cyan-600 text-white p-5 rounded-b-3xl shadow-lg relative z-10">
+        <header class="bg-cyan-600 text-white p-5 rounded-b-2xl shadow-md relative z-10">
             <div class="flex justify-between items-center mb-2">
-                <h1 class="text-xl font-bold flex items-center gap-2 drop-shadow-md">
+                <h1 class="text-xl font-bold flex items-center gap-2">
                     <i data-lucide="graduation-cap" class="w-6 h-6 text-cyan-200"></i>
                     Tra Cứu Học Phí
                 </h1>
-                <button id="btn-toggle-view" class="p-2 bg-cyan-700 hover:bg-cyan-800 rounded-full transition shadow-sm active:scale-95" title="Dành cho Giáo viên">
-                    <i data-lucide="settings" class="w-5 h-5 text-cyan-100" id="icon-view-toggle"></i>
+                <button id="btn-toggle-view" class="p-2 bg-cyan-700 hover:bg-cyan-800 rounded-full transition shadow-sm" title="Dành cho Giáo viên">
+                    <i data-lucide="settings" class="w-5 h-5" id="icon-view-toggle"></i>
                 </button>
             </div>
-            <p class="text-cyan-100 text-sm font-medium">LỚP 5.2 HÈ 2026 • Thông tin cá nhân & bảo mật</p>
+            <p class="text-cyan-100 text-sm opacity-90">LỚP 5.2 - HÈ 2026 • Riêng tư & Bảo mật</p>
         </header>
 
         <!-- MAIN CONTENT -->
-        <main class="flex-1 p-5 overflow-y-auto pb-10">
+        <main class="flex-1 p-5 overflow-y-auto">
             
             <!-- VIEW: PHỤ HUYNH TÌM KIẾM -->
             <div id="view-parent" class="space-y-6 block">
-                <div class="bg-cyan-50 border border-cyan-100 p-4 rounded-xl text-sm text-cyan-800 flex gap-3 shadow-sm">
+                <div class="bg-cyan-50 border border-cyan-100 p-4 rounded-xl text-sm text-cyan-800 flex gap-3">
                     <i data-lucide="info" class="w-5 h-5 flex-shrink-0 mt-0.5 text-cyan-600"></i>
-                    <p>Phụ huynh vui lòng <b>nhập Tên hoặc Họ Tên</b> của con. Hệ thống tự động bỏ qua ghi chú (Ví dụ: Bảo An, Tú Anh, Gia Hân).</p>
+                    <p>Phụ huynh vui lòng <b>nhập Tên hoặc Họ Tên</b> của con. Hệ thống tự động bỏ qua ghi chú. (Ví dụ: Gia Hân, Bảo An)</p>
                 </div>
 
                 <form id="search-form" class="relative">
@@ -82,13 +78,13 @@
                         type="text" 
                         id="search-input"
                         placeholder="Nhập chính xác tên học sinh..."
-                        class="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:bg-white transition shadow-sm text-lg font-medium"
+                        class="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:bg-white transition shadow-sm text-lg"
                         autocomplete="off"
                     />
                     <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6"></i>
                     <button 
                         type="submit"
-                        class="mt-4 w-full bg-cyan-600 text-white font-bold py-3.5 rounded-xl hover:bg-cyan-700 active:bg-cyan-800 transition shadow-md hover:shadow-lg"
+                        class="mt-4 w-full bg-cyan-600 text-white font-semibold py-3.5 rounded-xl hover:bg-cyan-700 active:bg-cyan-800 transition shadow-md"
                     >
                         Tra Cứu Ngay
                     </button>
@@ -104,41 +100,41 @@
 
             <!-- VIEW: GIÁO VIÊN (ADMIN) -->
             <div id="view-admin" class="hidden animate-fade-in space-y-6">
-                <div class="bg-amber-50 border border-amber-200 p-5 rounded-2xl shadow-sm">
-                    <h2 class="font-bold text-amber-800 flex items-center gap-2 mb-2 text-lg">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-amber-600"></i> Khu vực Giáo Viên
+                <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl">
+                    <h2 class="font-bold text-amber-800 flex items-center gap-2 mb-2">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i> Khu vực Giáo Viên
                     </h2>
-                    <p class="text-sm text-amber-700 mb-5 leading-relaxed">
+                    <p class="text-sm text-amber-700 mb-4">
                         Tại đây cô giáo có thể tải lên file Excel (đã lưu dạng .CSV) để cập nhật dữ liệu.
                     </p>
                     
-                    <label class="relative flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-amber-400 bg-white p-8 hover:bg-amber-100/50 transition duration-200 group">
-                        <i data-lucide="upload" class="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 group-hover:text-amber-500 transition"></i>
-                        <span class="text-sm font-bold text-amber-800">Chọn file .CSV để tải lên</span>
-                        <span class="text-xs font-medium text-amber-500 mt-1">Hỗ trợ file CSV tách bằng dấu phẩy</span>
+                    <label class="relative flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-amber-300 bg-white p-6 hover:bg-amber-50 transition">
+                        <i data-lucide="upload" class="w-8 h-8 text-amber-500 mb-2"></i>
+                        <span class="text-sm font-semibold text-amber-700">Chọn file .CSV để tải lên</span>
+                        <span class="text-xs text-amber-500 mt-1">Hỗ trợ file CSV tách bằng dấu phẩy</span>
                         <input type="file" accept=".csv" id="file-upload" class="hidden" />
                     </label>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <div class="bg-gray-50 p-4 border-b border-gray-200 flex items-center justify-between">
-                        <h3 class="font-bold text-gray-700 flex items-center gap-2">
+                        <h3 class="font-semibold text-gray-700 flex items-center gap-2">
                             <i data-lucide="file-text" class="w-5 h-5 text-gray-500"></i> Dữ liệu hiện tại
                         </h3>
-                        <span id="student-count" class="bg-cyan-100 text-cyan-700 text-xs font-black px-3 py-1.5 rounded-full shadow-sm">
-                            0 HỌC SINH
+                        <span id="student-count" class="bg-cyan-100 text-cyan-700 text-xs font-bold px-2 py-1 rounded-full">
+                            0 học sinh
                         </span>
                     </div>
-                    <div class="overflow-x-auto max-h-[400px]">
-                        <table class="w-full text-sm text-left text-gray-600">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-100 sticky top-0 shadow-sm z-10">
+                    <div class="overflow-x-auto max-h-64">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0 shadow-sm">
                                 <tr>
-                                    <th class="px-5 py-4 whitespace-nowrap font-bold">Tên Học Sinh</th>
-                                    <th class="px-5 py-4 whitespace-nowrap text-center font-bold">Tổng buổi</th>
-                                    <th class="px-5 py-4 whitespace-nowrap text-right font-bold">Tổng tiền</th>
+                                    <th class="px-4 py-3 whitespace-nowrap">Tên Học Sinh</th>
+                                    <th class="px-4 py-3 whitespace-nowrap">Tổng buổi</th>
+                                    <th class="px-4 py-3 whitespace-nowrap">Tổng tiền</th>
                                 </tr>
                             </thead>
-                            <tbody id="admin-table-body" class="divide-y divide-gray-100">
+                            <tbody id="admin-table-body">
                                 <!-- Data render qua JS -->
                             </tbody>
                         </table>
@@ -149,15 +145,12 @@
         </main>
         
         <!-- Custom Toast Notification -->
-        <div id="toast">
-            <i data-lucide="info" class="w-4 h-4 text-cyan-300"></i>
-            <span id="toast-message">Thông báo</span>
-        </div>
+        <div id="toast">Thông báo</div>
     </div>
 
     <!-- SCRIPT CHÍNH -->
     <script>
-        // --- DỮ LIỆU MẶC ĐỊNH LỚP 5.2 HÈ 2026 (14 HỌC SINH ĐÃ DỌN SẠCH KÝ TỰ THỪA) ---
+        // --- DỮ LIỆU MẶC ĐỊNH LỚP 5.2 (13 HỌC SINH - ĐÃ LOẠI QUANG KHẢI) ---
         const defaultCSVData = `STT,Tên Học Sinh,Số buổi T7,Học phí T7 (VNĐ),Số buổi T8,Học phí T8 (VNĐ),Tổng số buổi,Tổng học phí (VNĐ)
 1,BẢO AN,5,200.000,0,0,5,200.000
 2,BẢO ANH,6,240.000,3,120.000,9,360.000
@@ -170,9 +163,8 @@
 9,NHÃ HÂN,6,240.000,3,120.000,9,360.000
 10,TÀO NGỌC HIẾU,5,200.000,4,160.000,9,360.000
 11,KHÁNH HUYỀN,6,240.000,4,160.000,10,400.000
-12,QUANG KHẢI,6,240.000,4,160.000,10,400.000
-13,KHANG,2,80.000,4,160.000,6,240.000
-14,THIỆN,6,240.000,4,160.000,10,400.000`;
+12,KHANG,2,80.000,4,160.000,6,240.000
+13,THIỆN,6,240.000,4,160.000,10,400.000`;
 
         // --- TRẠNG THÁI (STATE) ---
         let currentData = [];
@@ -203,7 +195,6 @@
             return str.trim().toLowerCase();
         }
 
-        // Tự động cắt bỏ nội dung trong ngoặc đơn
         function cleanNameForSearch(str) {
             if (!str) return "";
             let cleaned = removeVietnameseTones(str);
@@ -225,8 +216,7 @@
 
         function showToast(message) {
             const toast = document.getElementById("toast");
-            const toastMsg = document.getElementById("toast-message");
-            toastMsg.innerText = message;
+            toast.innerText = message;
             toast.className = "show";
             setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
         }
@@ -268,6 +258,7 @@
         // --- KHỞI TẠO ỨNG DỤNG ---
         function initApp() {
             lucide.createIcons();
+            // Đã đổi tên biến LocalStorage thành _v2 để ép trình duyệt xóa Quang Khải
             const savedData = localStorage.getItem('class52TuitionData_v2');
             if (savedData) {
                 try {
@@ -320,7 +311,7 @@
             const normalizedSearch = cleanNameForSearch(searchTerm);
 
             searchResults = currentData.filter(student => {
-                const studentName = student["Tên Học Sinh"] || student["Họ và tên"] || "";
+                const studentName = student["Tên Học Sinh"] || "";
                 const normalizedName = cleanNameForSearch(studentName);
                 
                 // Khớp chính xác hoàn toàn HOẶC khớp chính xác chữ cuối cùng (tên)
@@ -339,32 +330,31 @@
             const container = document.getElementById('search-results-container');
             if (searchResults.length === 0) {
                 container.innerHTML = `
-                    <div class="text-center py-10 text-gray-500 bg-white border border-gray-100 rounded-2xl shadow-sm mt-4">
-                        <i data-lucide="user-x" class="w-14 h-14 mx-auto text-gray-300 mb-3"></i>
-                        <p class="font-medium text-gray-600">Không tìm thấy học sinh nào khớp với "${term}".</p>
-                        <p class="text-sm mt-1 text-gray-400">Vui lòng nhập Tên hoặc Họ Tên con chính xác!</p>
+                    <div class="text-center py-8 text-gray-500">
+                        <i data-lucide="user-x" class="w-12 h-12 mx-auto text-gray-300 mb-3"></i>
+                        <p>Không tìm thấy học sinh nào khớp với "${term}".</p>
+                        <p class="text-sm mt-1">Vui lòng nhập Tên hoặc Họ Tên con chính xác!</p>
                     </div>
                 `;
             } else {
                 let html = `
-                    <div class="space-y-3 mt-4">
-                        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">
-                            Kết quả khả dụng (${searchResults.length})
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                            Hệ thống tìm thấy (${searchResults.length} kết quả)
                         </h3>
                 `;
                 searchResults.forEach((student, idx) => {
-                    const studentName = student["Tên Học Sinh"] || student["Họ và tên"];
                     html += `
                         <button
                             onclick="showStudentDetail(${idx})"
                             class="w-full bg-white border border-cyan-100 hover:border-cyan-400 hover:shadow-md p-4 rounded-xl text-left flex items-center justify-between transition group"
                         >
                             <div class="flex items-center gap-3">
-                                <div class="bg-cyan-50 p-2.5 rounded-full text-cyan-600 group-hover:bg-cyan-100 transition">
+                                <div class="bg-cyan-100 p-2 rounded-full text-cyan-600">
                                     <i data-lucide="user" class="w-5 h-5"></i>
                                 </div>
                                 <span class="font-semibold text-gray-800 text-lg">
-                                    ${studentName}
+                                    ${student["Tên Học Sinh"]}
                                 </span>
                             </div>
                             <i data-lucide="chevron-left" class="w-5 h-5 text-gray-400 transform rotate-180 group-hover:text-cyan-500 transition"></i>
@@ -381,7 +371,6 @@
         window.showStudentDetail = function(index) {
             selectedStudent = searchResults[index];
             const container = document.getElementById('view-detail');
-            const studentName = selectedStudent["Tên Học Sinh"] || selectedStudent["Họ và tên"];
             
             // Phân tích chi tiết tháng
             const details = [];
@@ -401,44 +390,40 @@
             });
 
             let monthsHtml = '';
-            if (details.length === 0) {
-                monthsHtml = `<div class="text-center p-6 text-gray-500 italic bg-gray-50 rounded-2xl border border-gray-100">Chưa có dữ liệu học phí các tháng.</div>`;
-            } else {
-                details.forEach(detail => {
-                    monthsHtml += `
-                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm">
-                            <div>
-                                <p class="font-bold text-gray-700">Tháng ${detail.month}</p>
-                                <p class="text-sm font-medium text-cyan-600 mt-0.5">${detail.sessions} buổi học</p>
-                            </div>
-                            <div class="font-bold text-gray-800 text-lg">
-                                ${formatCurrency(detail.fee)}
-                            </div>
+            details.forEach(detail => {
+                monthsHtml += `
+                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg border border-gray-100">
+                        <div>
+                            <p class="font-semibold text-gray-700">Tháng ${detail.month}</p>
+                            <p class="text-xs text-gray-500">${detail.sessions} buổi học</p>
                         </div>
-                    `;
-                });
-            }
+                        <div class="font-bold text-gray-800">
+                            ${formatCurrency(detail.fee)}
+                        </div>
+                    </div>
+                `;
+            });
 
             container.innerHTML = `
                 <button 
                     onclick="goBackToSearch()"
-                    class="text-cyan-700 flex items-center gap-1 text-sm font-semibold mb-4 hover:underline bg-white px-4 py-2 rounded-full shadow-sm border border-cyan-50 w-fit active:scale-95 transition"
+                    class="text-cyan-600 flex items-center gap-1 text-sm font-medium mb-4 hover:underline"
                 >
                     <i data-lucide="chevron-left" class="w-4 h-4"></i> Quay lại tìm kiếm
                 </button>
 
-                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-                    <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-8 text-center border-b border-cyan-100 relative">
-                        <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto shadow-md mb-4 border-4 border-cyan-50">
-                            <i data-lucide="graduation-cap" class="w-10 h-10 text-cyan-600"></i>
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 text-center border-b border-cyan-100">
+                        <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto shadow-sm mb-3">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-cyan-600"></i>
                         </div>
-                        <h2 class="text-2xl font-black text-gray-800 tracking-tight">${studentName}</h2>
-                        <p class="text-cyan-600 font-semibold mt-1.5 text-sm uppercase tracking-wider">LỚP 5.2 - HÈ 2026</p>
+                        <h2 class="text-2xl font-bold text-gray-800">${selectedStudent["Tên Học Sinh"]}</h2>
+                        <p class="text-gray-500 mt-1">LỚP 5.2 - HÈ 2026</p>
                     </div>
 
                     <div class="p-6 space-y-6">
                         <div>
-                            <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
                                 <i data-lucide="calendar" class="w-4 h-4"></i> Lịch Sử Học Phí
                             </h3>
                             <div class="space-y-3">
@@ -446,15 +431,14 @@
                             </div>
                         </div>
 
-                        <div class="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-2xl p-6 text-white shadow-inner relative overflow-hidden">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
-                            <div class="flex justify-between items-center mb-3 opacity-95 relative z-10">
-                                <span class="text-cyan-100 font-medium">Tổng số buổi tích luỹ:</span>
-                                <span class="font-bold text-xl bg-white/20 px-3 py-1 rounded-lg backdrop-blur-sm">${selectedStudent["Tổng số buổi"] || 0} buổi</span>
+                        <div class="bg-cyan-600 rounded-xl p-5 text-white shadow-inner">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-cyan-100">Tổng số buổi:</span>
+                                <span class="font-semibold text-lg">${selectedStudent["Tổng số buổi"] || 0} buổi</span>
                             </div>
-                            <div class="flex justify-between items-end border-t border-cyan-400/40 pt-4 mt-2 relative z-10">
-                                <span class="text-white font-semibold">Tổng học phí cần đóng:</span>
-                                <span class="text-3xl font-black text-yellow-300 drop-shadow-md">
+                            <div class="flex justify-between items-center border-t border-cyan-400/50 pt-3 mt-3">
+                                <span class="text-white font-medium">Tổng cần đóng:</span>
+                                <span class="text-2xl font-bold text-yellow-300">
                                     ${formatCurrency(selectedStudent["Tổng học phí (VNĐ)"] || selectedStudent["Tổng học phí"] || 0)}
                                 </span>
                             </div>
@@ -472,18 +456,15 @@
 
         // --- CHỨC NĂNG ADMIN & UPLOAD CSV ---
         function renderAdminTable() {
-            document.getElementById('student-count').innerText = `${currentData.length} HỌC SINH`;
+            document.getElementById('student-count').innerText = `${currentData.length} học sinh`;
             const tbody = document.getElementById('admin-table-body');
             let rowsHtml = '';
             currentData.forEach(row => {
-                const studentName = row["Tên Học Sinh"] || row["Họ và tên"];
                 rowsHtml += `
-                    <tr class="bg-white hover:bg-cyan-50/50 transition">
-                        <td class="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">${studentName}</td>
-                        <td class="px-5 py-4 text-center font-medium">
-                            <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded-md">${row["Tổng số buổi"] || 0}</span>
-                        </td>
-                        <td class="px-5 py-4 font-black text-cyan-600 text-right">
+                    <tr class="bg-white border-b hover:bg-gray-50">
+                        <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">${row["Tên Học Sinh"]}</td>
+                        <td class="px-4 py-3">${row["Tổng số buổi"] || 0}</td>
+                        <td class="px-4 py-3 font-bold text-cyan-600">
                             ${formatCurrency(row["Tổng học phí (VNĐ)"] || row["Tổng học phí"] || 0)}
                         </td>
                     </tr>
@@ -504,9 +485,9 @@
                     currentData = parsedData;
                     localStorage.setItem('class52TuitionData_v2', JSON.stringify(parsedData));
                     renderAdminTable();
-                    showToast('🎉 Tải lên danh sách thành công!');
+                    showToast('Tải lên danh sách thành công!');
                 } else {
-                    showToast('⚠️ File không hợp lệ hoặc rỗng!');
+                    showToast('File không hợp lệ hoặc rỗng. Vui lòng kiểm tra lại!');
                 }
                 // Reset file input
                 e.target.value = '';
